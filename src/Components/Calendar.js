@@ -6,13 +6,15 @@ const Calendar = () => {
   const [selectedDates, setSelectedDates] = useState([]);
 
   useEffect(() => {
-    axios.get('./public/data.json')
-      .then(response => {
-        setData(response.data);
-      })
-      .catch(error => {
-        console.error('Error fetching data:', error);
-      });
+    axios.get('/public/data.json')
+  .then(response => {
+    const jsonData = JSON.parse(response.data);
+    console.log(jsonData);
+  })
+  .catch(error => {
+    console.error("Error fetching data:", error);
+  });
+
   }, []);
 
   const handleDateSelection = (date) => {

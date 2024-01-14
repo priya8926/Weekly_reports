@@ -24,7 +24,7 @@ const App = () => {
     const initialData = [
       { Date: '2023-07-20', Time: '22:30' },
       { Date: '2023-07-1', Time: '09:00' },
-      { Date: '2023-06-21', Time: '015:00' },
+      { Date: '2023-06-21', Time: '15:00' },
       { Date: '2023-05-08', Time: '06:20' },
       { Date: '2023-11-21', Time: '09:40' },
       { Date: '2023-12-31', Time: '04:13' },
@@ -35,9 +35,9 @@ const App = () => {
   }, []);
   useEffect(() => {
    
-    const formattedEvents = data.map((item) => ({
-      id: item.Id,
-      title: item.Name,
+    const formattedEvents = data.map((item , index) => ({
+      id: index,
+      title: `${item.Date} ${item.Time}`,
       start: new Date(item.Date + ' ' + item.Time),
       end: new Date(item.Date + ' ' + item.Time),
     }));

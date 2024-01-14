@@ -22,20 +22,20 @@ const App = () => {
 
   useEffect(() => {
     const initialData = [
-      { Date: '2023-07-20', Time: '22:30' },
-      { Date: '2023-07-1', Time: '09:00' },
-      { Date: '2023-06-21', Time: '15:00' },
-      { Date: '2023-05-08', Time: '06:20' },
-      { Date: '2023-11-21', Time: '09:40' },
-      { Date: '2023-12-31', Time: '04:13' },
+      { index: 101, Date: '2023-07-20', Time: '22:30' },
+      { index: 102, Date: '2023-07-1', Time: '09:00' },
+      { index: 103, Date: '2023-06-21', Time: '15:00' },
+      { index: 104, Date: '2023-05-08', Time: '06:20' },
+      { index: 105, Date: '2023-11-21', Time: '09:40' },
+      { index: 106, Date: '2023-12-31', Time: '04:13' },
 
     ];
 
     setData(initialData);
   }, []);
   useEffect(() => {
-   
-    const formattedEvents = data.map((item , index) => ({
+
+    const formattedEvents = data.map((item, index) => ({
       id: index,
       title: `${item.Date} ${item.Time}`,
       start: new Date(item.Date + ' ' + item.Time),
@@ -47,8 +47,8 @@ const App = () => {
 
   return (
     <div>
-        <WeeklySchedule />
-        {/* <Calendar /> */}
+      <WeeklySchedule />
+      {/* <Calendar /> */}
       <h1>Weekly Calendar</h1>
       <Calendar
         localizer={localizer}
